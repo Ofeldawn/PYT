@@ -1,0 +1,32 @@
+{
+    "tasks":[
+        {
+            "name":"0",
+            "etape":"0.0",
+            "action":"Lister les objets nécessaires",
+            "deadline":"19/01/2016",
+            "tasker":"Ofeldawn",
+            "dispo":"non",
+            "avancement":"90%",
+            "redlight":"non"
+        },{
+            "name":"1",
+            "etape":"0.1",
+            "action":"Envoyer la liste",
+            "deadline":"20/01/2016",
+            "tasker":"",
+            "dispo":"oui",
+            "avancement":"0%",
+            "redlight":"non"
+        },{
+            "name":"2",
+            "etape":"1.0",
+            "action":"Générer l'acces statique des ressources",
+            "deadline":"21/01/2016",
+            "tasker":"Dev1",
+            "dispo":"non",
+            "avancement":"40%",
+            "redlight":"oui"
+        }
+    ]
+}
