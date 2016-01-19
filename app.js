@@ -2,33 +2,34 @@
 // Server settings//
 /////////////////*/
 
-//Require extension packs for nodejs apps development (expres, morgan, nodemailer,bcrypt-nodejs,gm, less ?)
+//Require extension packs for nodejs apps development (expres, morgan, nodemailer, bcrypt-nodejs, gm, less ?)
 
 var express = require('express');
 var morgan = require('morgan');
+var serveStatic = require('serve-static')
 
 var app = express();
 
-//Access to resources
-app.use(express.static(__dirname + '/resources'));
+//Access to resources by serving static content
+app.use(serveStatic(__dirname + '/resources'));
 
 /*Test1: display test.ejs without any nodejs variables SUCCESS
-Test2: display test.ejs with a nodejs variable: message numéro 0 from moods 
+Test2: display test.ejs with a nodejs variable: message numéro 0 from moods SUCCESS
 */
 
-app.get('/adm/', function(req, res){
+app.get('/test1/', function(req, res){
   res.render('test.ejs');
 });
 
-/*
-var msgtest = "0";
-app.get('/', function(req, res){
-    var display = getMood(msgtest);
-    res.render('test.ejs', {"init":message, "msg":req.init.message});
-});
-*/
 
-//Port - in execution for now: http://localhost:8080
+var msgtest = "0";
+app.get('/test2', function(req, res){
+    var display = getMood(msgtest);
+    res.render('test.ejs', {"init":display});
+});
+
+
+//Listening on port 8080 - in execution for now: http://localhost:8080
 app.listen(8080);
 
 /*/////////////////////////////
