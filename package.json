@@ -1,0 +1,9 @@
+{
+  "name": "PYT",
+  "version": "0.1.0",
+  "dependencies": {
+    "ejs": "^2.3.4",
+    "express": "^4.13.3",
+    "morgan": "^1.6.1"
+  }
+}
