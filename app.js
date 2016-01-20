@@ -13,13 +13,13 @@ var app = express();
 /*Access to resources by serving static content
 Test0: display moods.json 
 */
-app.use(serveStatic(__dirname + 'resources'));
+app.use('/resources',serveStatic(__dirname + '/resources/resources'));
 
 /*Test1: display test.ejs without any nodejs variables SUCCESS
 Test2: display test.ejs with a nodejs variable: message numéro 0 from moods SUCCESS
 */
 
-app.get('/test1/', function(req, res){
+app.get('/test1', function(req, res){
   res.render('test.ejs');
 });
 
@@ -30,9 +30,10 @@ app.get('/test2', function(req, res){
     res.render('test.ejs', {"init":display});
 });
 
-
 //Listening on port 8080 - in execution for now: http://localhost:8080
-app.listen(8080);
+app.listen(8080,function(){
+    console.log("Démarrage du serveur");
+});
 
 /*/////////////////////////////
 //Get informations to display//
@@ -52,5 +53,3 @@ function getMood(numéro){
     return init;
         
 };
-
-
