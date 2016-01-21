@@ -6,14 +6,15 @@
 
 var express = require('express');
 var morgan = require('morgan');
-var serveStatic = require('serve-static')
+//var serveStatic = require('serve-static')
 
 var app = express();
 
 /*Access to resources by serving static content
-Test0: display moods.json 
+Test0: display moods.json SUCCESS
 */
-app.use('/resources',serveStatic(__dirname + '/resources/resources'));
+app.use(morgan('dev'));
+app.use('/resources/',express.static(__dirname + '/resources'));
 
 /*Test1: display test.ejs without any nodejs variables SUCCESS
 Test2: display test.ejs with a nodejs variable: message numéro 0 from moods SUCCESS
